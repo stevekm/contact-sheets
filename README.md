@@ -1,4 +1,4 @@
-# How to make contact sheets from color film negatives
+# How to make contact sheets from film negatives
 
 In this post I will detail methods on how to make contact sheets from 35mm film negatives.
 
