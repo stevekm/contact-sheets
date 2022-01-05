@@ -45,7 +45,7 @@ The advantage to this is that you will get a contact sheet that exactly matches 
 
 The disadvantage to this is that the process of creating such a contact sheet can be labor intensive and complicated (though there is the potential for automation in some steps and simplification via different software).
 
-Most all of the steps shown here can be tweaked and adapted for your own personal workflow. For example, many film photographers perfer to use a digital camera to "scan" their negatives instead of a flatbed scanner or dedicated film scanner; this will work perfectly well with this method. Many people may also have copies of Photoshop or other software with extra built-in methods to facilitate contact sheet generation.
+Most all of the steps shown here can be tweaked and adapted for your own personal workflow. For example, many film photographers perfer to use a digital camera to "scan" their negatives instead of a flatbed scanner or dedicated film scanner; this will work perfectly well with this method. Many people may also have copies of Photoshop or other software with extra built-in methods to facilitate contact sheet generation instead of using GIMP as shown here.
 
 ### Scan the negatives
 
