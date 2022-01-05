@@ -76,6 +76,7 @@ Output settings:
 <img src="images/epson_scan_output.png" alt="Epson Scan output settings" width="100%"/><figcaption>Output settings</figcaption>
 </figure>
 
+
 A scan resolution of 600 DPI is used here since that is likely the best quality output we will get from a standard printer later when we want go to print these pages out.
 
 You should use the marquee tool in your scan software to crop the scan area down close to the edges of the film strips so you avoid including large amounts of white border in your saved image.
