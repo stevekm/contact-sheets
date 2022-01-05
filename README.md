@@ -22,13 +22,14 @@ The following hardware and software will be used in this guide.
     - I'm using an Epson V600 scanner
 - (optional) light pad
 - scanner software
-    - I'm using [Epson Scan 2](https://epson.com/Support/Scanners/Perfection-Series/Epson-Perfection-V600-Photo/s/SPT_B11B198011), VueScan and/or SilverFast will also work
+    - I'm using [Epson Scan 2](https://epson.com/Support/Scanners/Perfection-Series/Epson-Perfection-V600-Photo/s/SPT_B11B198011), [VueScan](https://www.hamrick.com/) and/or [SilverFast](https://www.silverfast.com/) will also work
 - image editing software
     - I'm using GIMP, Photoshop can also be used
 
 ### From pre-scanned images
 
 - [Imagemagick](https://imagemagick.org/) software
+    - included convenience scripts also make use of `bash`, Python, and [GNU `parallel`](https://www.gnu.org/software/parallel/)
 
 # Methods
 
@@ -127,12 +128,10 @@ The general overview of the whole process looks like this:
 
 Open the scanned image in GIMP. I usually choose to keep the embedded color profile.
 
-<!-- ![GIMP image import](images/gimp_import.png) -->
 <figure>
 <img src="images/gimp_import.png" alt="GIMP image import" width="100%"/><figcaption>GIMP image import</figcaption>
 </figure>
 
-<!-- ![GIMP image imported](images/gimp_imported.png) -->
 <figure>
 <img src="images/gimp_imported.png" alt="GIMP image imported" width="100%"/><figcaption>GIMP image imported</figcaption>
 </figure>
@@ -140,9 +139,6 @@ Open the scanned image in GIMP. I usually choose to keep the embedded color prof
 This will add a new entry to the Layers panel with the image
 
 ![GIMP first layer](images/gimp_first_layer.png)
-<!-- <figure>
-<img src="images/gimp_first_layer.png" alt="GIMP first layer" width="100%"/><figcaption>GIMP first layer</figcaption>
-</figure> -->
 
 For convenience, I like to make an extra copy of this layer (right click > Duplicate Layer), and then turn off visibility of the original layer (the eyeball button). Make sure you have the new duplicate layer selected in the list.
 
@@ -152,18 +148,15 @@ For convenience, I like to make an extra copy of this layer (right click > Dupli
 
 Next I will crop out the upper label from the image. To do this I will first draw a box around it with the marquee tool (rectangle select tool), then remove the selected portion of the image by right clicking on the box and choosing Edit > Clear. By default, the currently selected background color will be shown instead (white in this case). However, I want to completely remove the image contents in this area, so I will right click on my current layer and select Add Alpha Channel. Now, if I Clear my selection box on the image a second time, I am left with only a transparent background in this area.
 
-<!-- ![GIMP first clear](images/gimp_first_clear.png) -->
 <figure>
 <img src="images/gimp_first_clear.png" alt="GIMP first clear" width="100%"/><figcaption>GIMP first clear</figcaption>
 </figure>
 
-<!-- ![GIMP add alpha](images/gimp_add_alpha.png) -->
 <figure>
 <img src="images/gimp_add_alpha.png" alt="GIMP add alpha" width="100%"/><figcaption>GIMP add alpha</figcaption>
 </figure>
 
 
-<!-- ![GIMP second clear](images/gimp_second_clear.png) -->
 <figure>
 <img src="images/gimp_second_clear.png" alt="GIMP second clear" width="100%"/><figcaption>GIMP second clear</figcaption>
 </figure>
@@ -188,7 +181,6 @@ Next, create a New Layer with the following attributes:
 
 If it worked correctly, you should now be able to see transparency behind and around the film strips where the white pixels used to be. If you did not erase all the pixels this way, feel free to try adding more Color Erase layers with different selected tones from the image.
 
-<!-- ![GIMP erase color white result](images/gimp_layer_erase_white_result.png) -->
 <figure>
 <img src="images/gimp_layer_erase_white_result.png" alt="GIMP erase color white result" width="100%"/><figcaption>GIMP erase color white result</figcaption>
 </figure>
@@ -203,7 +195,6 @@ At this point, I like to make a "checkpoint" for my progress by making a new lay
 
 Next, go to Colors > Invert to apply the color inversion. It should look something like this:
 
-<!-- ![GIMP invert](images/gimp_invert.png) -->
 <figure>
 <img src="images/gimp_invert.png" alt="GIMP invert" width="100%"/><figcaption>GIMP invert</figcaption>
 </figure>
@@ -226,10 +217,10 @@ Make a new layer with the following attributes:
 
 The result should look something like this
 
-<!-- ![GIMP image inverted with background removed](images/gimp_inverted_without_background.png) -->
 <figure>
 <img src="images/gimp_inverted_without_background.png" alt="GIMP image inverted with background removed" width="100%"/><figcaption>GIMP image inverted with background removed</figcaption>
 </figure>
+
 #### Convert the image to black and white
 
 At this point, you have some options: complete the image editing in its current color format, or convert the image to black and white. While it is possible to get good results from editing the colors of the image, I find that it is much simpler to do the remaining steps in black and white. Some guides suggest using tools such as Colors > Auto > White Balance at this step to continue editing in color, but I have not had satisfactory results with that method so far. So I will do the next steps in black and white.
@@ -255,7 +246,6 @@ For this film sheet, I found mostly satisfactory results with the following sett
 - Blue Channel Multiplier: 0.035
 - Preserve luminosity
 
-<!-- ![GIMP mono mixer settings](images/gimp_mono_mixer_settings.png) -->
 <figure>
 <img src="images/gimp_mono_mixer_settings.png" alt="GIMP mono mixer settings" width="100%"/><figcaption>GIMP mono mixer settings</figcaption>
 </figure>
@@ -269,11 +259,9 @@ Next we will want to adjust the color curves to enhance the representation of hi
 
 From the menu, go to Colors > Curves. The color curve in its original default state looks like this:
 
-<!-- ![GIMP defult color curve](images/gimp_color_curve_default.png) -->
 <figure>
 <img src="images/gimp_color_curve_default.png" alt="GIMP defult color curve" width="100%"/><figcaption>GIMP defult color curve</figcaption>
 </figure>
-
 
 You will notice that the color channels for red, green, and blue are still listed; since we converted to black & white, we only need to worry about the "value" channel.
 
@@ -281,29 +269,24 @@ This graph shows a histogram along the bottom axis with the relative amounts of 
 
 Fist, we will drag the white point at the upper right over to the left a little until it is closer to the right-most edge of the histogram. This will brighten up the whitest parts of the image. Do not go too far to the left or you will start clipping and losing image data.
 
-<!-- ![GIMP adjust highlight point](images/gimp_color_curve_highlight_point.png) -->
 <figure>
 <img src="images/gimp_color_curve_highlight_point.png" alt="GIMP adjust highlight point" width="100%"/><figcaption>GIMP adjust highlight point</figcaption>
 </figure>
 
-
 Next, we want to pull the curve downwards so that it is no longer a straight line, but instead tracks closer to the contour of the histogram. For this, I click on the color curve line approximately 1/4 to 1/3 of the way to the left from the white point, and drag it downwards. This brings down the intensity of the brighter regions of the image, making some faint details more visible.
 
-<!-- ![GIMP adjust first curve point](images/gimp_color_curve_first_point.png) -->
 <figure>
 <img src="images/gimp_color_curve_first_point.png" alt="GIMP adjust first curve point" width="100%"/><figcaption>GIMP adjust first curve point</figcaption>
 </figure>
 
 Likewise, I do the same on the other end of the line closer to the black point. Less adjustment is needed here, and may not be neccessary as per your preferences. Pulling down this area slightly makes the shadows a little darker, which helps increase contrast in the images. Do not go too far or spend too much time with it, because we will ultimately be limited by the dynamic range output of our commodity printer.
 
-<!-- ![GIMP adjust second point](images/gimp_color_curve_second_point.png) -->
 <figure>
 <img src="images/gimp_color_curve_second_point.png" alt="GIMP adjust second point" width="100%"/><figcaption>GIMP adjust second point</figcaption>
 </figure>
 
 The final result will look something like this:
 
-<!-- ![GIMP color corrected](images/gimp_color_corrected.png) -->
 <figure>
 <img src="images/gimp_color_corrected.png" alt="GIMP color corrected" width="100%"/><figcaption>GIMP color corrected</figcaption>
 </figure>
@@ -314,7 +297,6 @@ The original label from the film sleeve is helpful to have since it includes the
 
 A really simple solution for this is to just turn back on the visibility of the very first image layer that we imported, which contains the unedited scanned image. This will also fill in the transparent background behind the film strips with white again, which is OK at this point since we are printing on white paper anyway.
 
-<!-- ![GIMP corrected image with source layer enabled](images/gimp_corrected_with_source_layer.png) -->
 <figure>
 <img src="images/gimp_corrected_with_source_layer.png" alt="GIMP corrected image with source layer enabled" width="100%"/><figcaption>GIMP corrected image with source layer enabled</figcaption>
 </figure>
@@ -323,7 +305,6 @@ A really simple solution for this is to just turn back on the visibility of the 
 
 Finally, save the finished image by going to File > Export.
 
-<!-- ![GIMP export](images/gimp_export.png) -->
 <figure>
 <img src="images/gimp_export.png" alt="GIMP export" width="100%"/><figcaption>GIMP export</figcaption>
 </figure>
@@ -331,7 +312,6 @@ Finally, save the finished image by going to File > Export.
 
 The finished image looks something like this:
 
-<!-- ![Final contact sheet](images/contact_sheet_01_export.jpg) -->
 <figure>
 <img src="images/contact_sheet_01_export.jpg" alt="Final contact sheet" width="100%"/><figcaption>Final contact sheet</figcaption>
 </figure>
@@ -346,7 +326,6 @@ Print out the resulting image, and your contact sheet is complete!
 
 We can repeat the entire process with the image scanned with the light pad.
 
-<!-- ![Final contact sheet with light pad](images/contact_sheet_02_export.jpg) -->
 <figure>
 <img src="images/contact_sheet_02_export.jpg" alt="Final contact sheet with light pad" width="100%"/><figcaption>Final contact sheet with light pad</figcaption>
 </figure>
@@ -396,7 +375,6 @@ These settings include:
 
 The output looks like this:
 
-<!-- ![montage 2](images/montage_2.jpg) -->
 <figure>
 <img src="images/montage_2.jpg" alt="montage 2" width="100%"/><figcaption>montage 2</figcaption>
 </figure>
@@ -411,7 +389,13 @@ I have included two example bash scripts in this repo;
 
 - `make_contact_sheets_pages.sh`: the same as above except it only runs on dirs with less than 41 images and makes multiple pages of contact sheets with 40 images each
 
-NOTE: these scripts make use of Python and GNU `parallel`.
+The advantage of this method is that its quick and easy to create contact sheets for all of your scanned images, especially .
+
+There are a few disadvantages however:
+
+- the contact sheets will not exactly mirror the source film pages; you can see in my example, frames are in a different order, some may be absent if you skipped scanning them, others may be duplicated if you scanned them multiple times, etc..
+- any hand written markup you made to the film sheets (such as identifiers and notes) will not be carried over to the contact sheet
+- if you did not already scan every frame, this method will not help you; you obviously cannot use this method for choosing which frames to scan
 
 # Printing
 
@@ -435,7 +419,7 @@ The methods in this guide are intended for producing "good-enough" quality conta
 
 - [Epson V600 scanner](https://epson.com/For-Home/Scanners/Photo-Scanners/Epson-Perfection-V600-Photo-Scanner/p/B11B198011) ($250)
 - [comzler Light Board A4 Tracing Light Box](https://www.amazon.com/dp/B07VF42DDB) ($20)
-- Print File Archival 35mm Negative Preservers 35-7B (7 strips of 5 frames)
+- [Print File Archival 35mm Negative Preservers 35-7B](https://www.printfile.com/product/35-7b_100/) (7 strips of 5 frames)
 
 # References
 
@@ -451,5 +435,6 @@ The methods in this guide are intended for producing "good-enough" quality conta
     - <https://www.gimp.org/tutorials/Color2BW/>
     - <https://askubuntu.com/questions/119949/in-gimp-how-do-i-make-part-of-image-transparent-manually>
     - <https://www.gimpusers.com/forums/gimp-user/20542-contact-sheet>
+    - ["Automate Editing in GIMP"](https://www.gimp.org/tutorials/Automate_Editing_in_GIMP/)
 - ["Film Photography Intro Pt.3: Scanning" by  James Stevenson Photography](https://www.youtube.com/watch?v=0se_9MxDSoM)
-- ["Automate Editing in GIMP"](https://www.gimp.org/tutorials/Automate_Editing_in_GIMP/)
+
