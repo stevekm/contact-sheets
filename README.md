@@ -1,4 +1,4 @@
-# How to make contact sheets from (color) film negatives
+# How to make contact sheets from color film negatives
 
 In this post I will detail methods on how to make contact sheets from 35mm film negatives.
 
@@ -76,14 +76,15 @@ Output settings:
 <img src="images/epson_scan_output.png" alt="Epson Scan output settings" width="100%"/><figcaption>Output settings</figcaption>
 </figure>
 
-
 A scan resolution of 600 DPI is used here since that is likely the best quality output we will get from a standard printer later when we want go to print these pages out.
 
 You should use the marquee tool in your scan software to crop the scan area down close to the edges of the film strips so you avoid including large amounts of white border in your saved image.
 
 The final image in this case is about 8MB in size at a resolution of roughly 4500x6600 pixels.
 
-TODO: ![Scanned image]()
+<figure>
+<img src="images/film_sheet_on_scanner.jpg" alt="Film sheet on scanner" width="100%"/><figcaption>Film sheet on scanner</figcaption>
+</figure>
 
 As a side note, many scan softwares such as VueScan, SilverFast, and even Epson Scan are able to automatically invert the colors on negative film scans and apply quick and easy color corrections. Unfortunately, none of these softwares appear to be able to do this from the lower flatbed scanner, only from the upper film transparency scanner. If they could apply film negative inversions from the flatbed scan, then most all of the following steps would not be needed.
 
@@ -97,7 +98,10 @@ In this image you can see that the scan preview shows a little more detail in th
 <img src="images/epson_scan_input_lightpad.png" alt="Epson Scan input preview with light pad" width="100%"/><figcaption>Epson Scan input preview with light pad</figcaption>
 </figure>
 
-TODO: ![Scanned image with lightbox]()
+<figure>
+<img src="images/film_sheet_on_scanner_with_lightpad.jpg" alt="Scanner with lightpad" width="100%"/><figcaption>Scanned image with lightpad</figcaption>
+</figure>
+
 
 ### Edit the image
 
@@ -334,7 +338,9 @@ The finished image looks something like this:
 
 Print out the resulting image, and your contact sheet is complete!
 
-TODO: ![Photo of contact sheet plus film sheet]()
+<figure>
+<img src="images/film_sheet_and_contact_sheet.jpg" alt="Film sheet and contact sheet" width="100%"/><figcaption>Film sheet and contact sheet</figcaption>
+</figure>
 
 #### With light pad
 
@@ -399,7 +405,11 @@ Wow, that was so much easier than before!
 
 We can even write a simple `bash` shell script to do this for every subdirectory in the current directory.
 
-- NOTE: put example script here
+I have included two example bash scripts in this repo;
+
+- `make_contact_sheets.sh`: script to make ImageMagick `montage` contact sheets from all .tif images in all subdirs in the current directory
+
+- `make_contact_sheets_pages.sh`: the same as above except it only runs on dirs with less than 41 images and makes multiple pages of contact sheets with 40 images each
 
 # Printing
 
