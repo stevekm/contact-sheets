@@ -411,6 +411,8 @@ I have included two example bash scripts in this repo;
 
 - `make_contact_sheets_pages.sh`: the same as above except it only runs on dirs with less than 41 images and makes multiple pages of contact sheets with 40 images each
 
+NOTE: these scripts make use of Python and GNU `parallel`.
+
 # Printing
 
 There is not too much to say in regards to printing. Since we are planning to print a contact sheet for every roll of film you've ever shot (and I am sure you have shot hundreds of film rolls by now) you will likely want to use the cheapest and most readily available printing method possible. For me, that means using a simple HP Laserjet printer.
