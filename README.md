@@ -96,7 +96,7 @@ In this image you can see that the scan preview shows a little more detail in th
 <img src="images/epson_scan_input_lightpad.png" alt="Epson Scan input preview with light pad" width="100%"/><figcaption>Epson Scan input preview with light pad</figcaption>
 </figure>
 
-# TODO: ![Scanned image with lightbox]()
+TODO: ![Scanned image with lightbox]()
 
 ### Edit the image
 
