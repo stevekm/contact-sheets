@@ -69,11 +69,11 @@ Output settings:
 - Embed ICC Profile
 
 <figure>
-<img src="images/epson_scan_input.png" alt="Epson Scan input settings" width="75%"/><figcaption>Input settings</figcaption>
+<img src="images/epson_scan_input.png" alt="Epson Scan input settings" width="100%"/><figcaption>Input settings</figcaption>
 </figure>
 
 <figure>
-<img src="images/epson_scan_output.png" alt="Epson Scan output settings" width="75%"/><figcaption>Output settings</figcaption>
+<img src="images/epson_scan_output.png" alt="Epson Scan output settings" width="100%"/><figcaption>Output settings</figcaption>
 </figure>
 
 A scan resolution of 600 DPI is used here since that is likely the best quality output we will get from a standard printer later when we want go to print these pages out.
@@ -93,7 +93,7 @@ At this point, you can also use a light pad to help illuminate the film. This wi
 In this image you can see that the scan preview shows a little more detail in the dark areas of the film while using the light pad. This will help give a better image quality in subsequent image editing steps
 
 <figure>
-<img src="images/epson_scan_input_lightpad.png" alt="Epson Scan input preview with light pad" width="75%"/><figcaption>Epson Scan input preview with light pad</figcaption>
+<img src="images/epson_scan_input_lightpad.png" alt="Epson Scan input preview with light pad" width="100%"/><figcaption>Epson Scan input preview with light pad</figcaption>
 </figure>
 
 # TODO: ![Scanned image with lightbox]()
@@ -124,19 +124,19 @@ Open the scanned image in GIMP. I usually choose to keep the embedded color prof
 
 <!-- ![GIMP image import](images/gimp_import.png) -->
 <figure>
-<img src="images/gimp_import.png" alt="GIMP image import" width="75%"/><figcaption>GIMP image import</figcaption>
+<img src="images/gimp_import.png" alt="GIMP image import" width="100%"/><figcaption>GIMP image import</figcaption>
 </figure>
 
 <!-- ![GIMP image imported](images/gimp_imported.png) -->
 <figure>
-<img src="images/gimp_imported.png" alt="GIMP image imported" width="75%"/><figcaption>GIMP image imported</figcaption>
+<img src="images/gimp_imported.png" alt="GIMP image imported" width="100%"/><figcaption>GIMP image imported</figcaption>
 </figure>
 
 This will add a new entry to the Layers panel with the image
 
 ![GIMP first layer](images/gimp_first_layer.png)
 <!-- <figure>
-<img src="images/gimp_first_layer.png" alt="GIMP first layer" width="75%"/><figcaption>GIMP first layer</figcaption>
+<img src="images/gimp_first_layer.png" alt="GIMP first layer" width="100%"/><figcaption>GIMP first layer</figcaption>
 </figure> -->
 
 For convenience, I like to make an extra copy of this layer (right click > Duplicate Layer), and then turn off visibility of the original layer (the eyeball button). Make sure you have the new duplicate layer selected in the list.
@@ -149,18 +149,18 @@ Next I will crop out the upper label from the image. To do this I will first dra
 
 <!-- ![GIMP first clear](images/gimp_first_clear.png) -->
 <figure>
-<img src="images/gimp_first_clear.png" alt="GIMP first clear" width="75%"/><figcaption>GIMP first clear</figcaption>
+<img src="images/gimp_first_clear.png" alt="GIMP first clear" width="100%"/><figcaption>GIMP first clear</figcaption>
 </figure>
 
 <!-- ![GIMP add alpha](images/gimp_add_alpha.png) -->
 <figure>
-<img src="images/gimp_add_alpha.png" alt="GIMP add alpha" width="75%"/><figcaption>GIMP add alpha</figcaption>
+<img src="images/gimp_add_alpha.png" alt="GIMP add alpha" width="100%"/><figcaption>GIMP add alpha</figcaption>
 </figure>
 
 
 <!-- ![GIMP second clear](images/gimp_second_clear.png) -->
 <figure>
-<img src="images/gimp_second_clear.png" alt="GIMP second clear" width="75%"/><figcaption>GIMP second clear</figcaption>
+<img src="images/gimp_second_clear.png" alt="GIMP second clear" width="100%"/><figcaption>GIMP second clear</figcaption>
 </figure>
 
 #### Erase white background
@@ -185,7 +185,7 @@ If it worked correctly, you should now be able to see transparency behind and ar
 
 <!-- ![GIMP erase color white result](images/gimp_layer_erase_white_result.png) -->
 <figure>
-<img src="images/gimp_layer_erase_white_result.png" alt="GIMP erase color white result" width="75%"/><figcaption>GIMP erase color white result</figcaption>
+<img src="images/gimp_layer_erase_white_result.png" alt="GIMP erase color white result" width="100%"/><figcaption>GIMP erase color white result</figcaption>
 </figure>
 
 NOTE: Make sure you remove the the selection rectangle from the canvas before the next step. It helps to do a Select All to get rid of it.
@@ -200,7 +200,7 @@ Next, go to Colors > Invert to apply the color inversion. It should look somethi
 
 <!-- ![GIMP invert](images/gimp_invert.png) -->
 <figure>
-<img src="images/gimp_invert.png" alt="GIMP invert" width="75%"/><figcaption>GIMP invert</figcaption>
+<img src="images/gimp_invert.png" alt="GIMP invert" width="100%"/><figcaption>GIMP invert</figcaption>
 </figure>
 
 #### Subtract film background color
@@ -223,7 +223,7 @@ The result should look something like this
 
 <!-- ![GIMP image inverted with background removed](images/gimp_inverted_without_background.png) -->
 <figure>
-<img src="images/gimp_inverted_without_background.png" alt="GIMP image inverted with background removed" width="75%"/><figcaption>GIMP image inverted with background removed</figcaption>
+<img src="images/gimp_inverted_without_background.png" alt="GIMP image inverted with background removed" width="100%"/><figcaption>GIMP image inverted with background removed</figcaption>
 </figure>
 #### Convert the image to black and white
 
@@ -252,7 +252,7 @@ For this film sheet, I found mostly satisfactory results with the following sett
 
 <!-- ![GIMP mono mixer settings](images/gimp_mono_mixer_settings.png) -->
 <figure>
-<img src="images/gimp_mono_mixer_settings.png" alt="GIMP mono mixer settings" width="75%"/><figcaption>GIMP mono mixer settings</figcaption>
+<img src="images/gimp_mono_mixer_settings.png" alt="GIMP mono mixer settings" width="100%"/><figcaption>GIMP mono mixer settings</figcaption>
 </figure>
 
 
@@ -266,7 +266,7 @@ From the menu, go to Colors > Curves. The color curve in its original default st
 
 <!-- ![GIMP defult color curve](images/gimp_color_curve_default.png) -->
 <figure>
-<img src="images/gimp_color_curve_default.png" alt="GIMP defult color curve" width="75%"/><figcaption>GIMP defult color curve</figcaption>
+<img src="images/gimp_color_curve_default.png" alt="GIMP defult color curve" width="100%"/><figcaption>GIMP defult color curve</figcaption>
 </figure>
 
 
@@ -278,7 +278,7 @@ Fist, we will drag the white point at the upper right over to the left a little 
 
 <!-- ![GIMP adjust highlight point](images/gimp_color_curve_highlight_point.png) -->
 <figure>
-<img src="images/gimp_color_curve_highlight_point.png" alt="GIMP adjust highlight point" width="75%"/><figcaption>GIMP adjust highlight point</figcaption>
+<img src="images/gimp_color_curve_highlight_point.png" alt="GIMP adjust highlight point" width="100%"/><figcaption>GIMP adjust highlight point</figcaption>
 </figure>
 
 
@@ -286,21 +286,21 @@ Next, we want to pull the curve downwards so that it is no longer a straight lin
 
 <!-- ![GIMP adjust first curve point](images/gimp_color_curve_first_point.png) -->
 <figure>
-<img src="images/gimp_color_curve_first_point.png" alt="GIMP adjust first curve point" width="75%"/><figcaption>GIMP adjust first curve point</figcaption>
+<img src="images/gimp_color_curve_first_point.png" alt="GIMP adjust first curve point" width="100%"/><figcaption>GIMP adjust first curve point</figcaption>
 </figure>
 
 Likewise, I do the same on the other end of the line closer to the black point. Less adjustment is needed here, and may not be neccessary as per your preferences. Pulling down this area slightly makes the shadows a little darker, which helps increase contrast in the images. Do not go too far or spend too much time with it, because we will ultimately be limited by the dynamic range output of our commodity printer.
 
 <!-- ![GIMP adjust second point](images/gimp_color_curve_second_point.png) -->
 <figure>
-<img src="images/gimp_color_curve_second_point.png" alt="GIMP adjust second point" width="75%"/><figcaption>GIMP adjust second point</figcaption>
+<img src="images/gimp_color_curve_second_point.png" alt="GIMP adjust second point" width="100%"/><figcaption>GIMP adjust second point</figcaption>
 </figure>
 
 The final result will look something like this:
 
 <!-- ![GIMP color corrected](images/gimp_color_corrected.png) -->
 <figure>
-<img src="images/gimp_color_corrected.png" alt="GIMP color corrected" width="75%"/><figcaption>GIMP color corrected</figcaption>
+<img src="images/gimp_color_corrected.png" alt="GIMP color corrected" width="100%"/><figcaption>GIMP color corrected</figcaption>
 </figure>
 
 #### Reapply the label
@@ -311,7 +311,7 @@ A really simple solution for this is to just turn back on the visibility of the 
 
 <!-- ![GIMP corrected image with source layer enabled](images/gimp_corrected_with_source_layer.png) -->
 <figure>
-<img src="images/gimp_corrected_with_source_layer.png" alt="GIMP corrected image with source layer enabled" width="75%"/><figcaption>GIMP corrected image with source layer enabled</figcaption>
+<img src="images/gimp_corrected_with_source_layer.png" alt="GIMP corrected image with source layer enabled" width="100%"/><figcaption>GIMP corrected image with source layer enabled</figcaption>
 </figure>
 
 #### Export the final image
@@ -320,7 +320,7 @@ Finally, save the finished image by going to File > Export.
 
 <!-- ![GIMP export](images/gimp_export.png) -->
 <figure>
-<img src="images/gimp_export.png" alt="GIMP export" width="75%"/><figcaption>GIMP export</figcaption>
+<img src="images/gimp_export.png" alt="GIMP export" width="100%"/><figcaption>GIMP export</figcaption>
 </figure>
 
 
@@ -328,7 +328,7 @@ The finished image looks something like this:
 
 <!-- ![Final contact sheet](images/contact_sheet_01_export.jpg) -->
 <figure>
-<img src="images/contact_sheet_01_export.jpg" alt="Final contact sheet" width="75%"/><figcaption>Final contact sheet</figcaption>
+<img src="images/contact_sheet_01_export.jpg" alt="Final contact sheet" width="100%"/><figcaption>Final contact sheet</figcaption>
 </figure>
 
 Print out the resulting image, and your contact sheet is complete!
@@ -341,7 +341,7 @@ We can repeat the entire process with the image scanned with the light pad.
 
 <!-- ![Final contact sheet with light pad](images/contact_sheet_02_export.jpg) -->
 <figure>
-<img src="images/contact_sheet_02_export.jpg" alt="Final contact sheet with light pad" width="75%"/><figcaption>Final contact sheet with light pad</figcaption>
+<img src="images/contact_sheet_02_export.jpg" alt="Final contact sheet with light pad" width="100%"/><figcaption>Final contact sheet with light pad</figcaption>
 </figure>
 
 You can see that the shadows and mid tones in the images were not affected much by the addition of the light pad during scanning, but the heavily exposed (and over exposed) highlights retained extra details.
@@ -391,7 +391,7 @@ The output looks like this:
 
 <!-- ![montage 2](images/montage_2.jpg) -->
 <figure>
-<img src="images/montage_2.jpg" alt="montage 2" width="75%"/><figcaption>montage 2</figcaption>
+<img src="images/montage_2.jpg" alt="montage 2" width="100%"/><figcaption>montage 2</figcaption>
 </figure>
 
 Wow, that was so much easier than before!
